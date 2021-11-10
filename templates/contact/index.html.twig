@@ -2,13 +2,10 @@
 
 {% block title %}Hello !{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block content %}
 
-<div class="example-wrapper">
+
+<div class="main">
 {% if city  is not null and name is not null %}
 
     <h1>Hello {{name}}! Bienvenue sur la page de {{city}} ✅</h1>
@@ -17,12 +14,13 @@
       <h1>Hello {{name}}! Bienvenue sur la page de Montpellier ✅</h1>
 
 {% endif %}
-{% if name is not defined or name is null and city is  defined %}
-    <h1>Hello ! Bienvenue sur la page de {{city}} ✅</h1>
+{% if name is not defined or name is null and city is not defined or city is null %}
+    <h1>Hello ! Bienvenue sur la page de Montpellier ✅</h1>
 {% endif %}
-        <li>Welcome back<code><a href="{{path("home")}}">Home !</a></code></li>
+        <li>Welcome back <code><a href="{{path("home")}}">Home !</a></code></li>
         <li>Contact Montpellier Thibaut <code><a href="{{path("contact")}}">here</a></code></li>
         <li>Contact Valence Thibaut <code><a href="{{path("contactCity",{"city":"Valence"})}}">here</a></code></li>
+
 
 
 

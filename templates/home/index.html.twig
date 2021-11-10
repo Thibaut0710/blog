@@ -1,23 +1,14 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Hello HomeController!{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Welcome back<code><a href="{{path("home")}}">Home !</a></code></li>
-        <li>Contact Montpellier Thibaut <code><a href="{{path("contact")}}">here</a></code></li>
-        <li>Contact Valence Thibaut <code><a href="{{path("contactCity",{city:"Valence"})}}">here</a></code></li>
-        <li>Contact Lyon Thibaut <code><a href="{{path("contactCity",{city:"Lyon",name:"Thibaut"})}}">Heeeeere</a></code></li>
-          <li>Contact Marseille Thibaut <code><a href="{{path("contact",{name:"Thibaut",city:"Marseille"})}}">Heeeeere</a></code></li>
-    </ul>
-</div>
+{% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
 {% endblock %}
+
+{% block content %}
+
+ <h1>Bienvenue sur la page Home Controller</h1>
+
+ {% endblock %}
+
+

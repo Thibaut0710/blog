@@ -34,7 +34,7 @@ class ContactController extends AbstractController
     public function contactCity(Request $request, string $city): Response{
 
         $name = $request->query->get('name');
-
+     
         return $this->render('contact/index.html.twig', [
             'name' => $name,
             "city" => $city
