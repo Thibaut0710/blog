@@ -27,6 +27,8 @@ class ContactController extends AbstractController
         
     }
 
+   
+
     /**
      * @Route("/contact/{city}", name="contactCity")
      */
