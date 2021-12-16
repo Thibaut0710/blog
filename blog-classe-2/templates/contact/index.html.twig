@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('contact') }}
+    <link rel="stylesheet" href="{{ asset('styles/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Hello {{ name }}! ✅</h1>
+
+        <form action="">
+            <input type="text" name="name" id="" value="{{ name }}" aria-label="Nom">
+            <input type="submit" value="Envoyer">
+        </form>
+
+        <div class="contact-container">
+
+            {% if form is defined  %}
+                <h2>Ajouter un nouveau contact</h2>
+
+                {{ form(form) }}
+            {% endif %}
+
+            {% if currentContact is defined and currentContact is not null %}
+                <h2>Mon contact actuel</h2>
+                <p>Demande de contact de : <strong>{{ currentContact.name }}</strong></p>
+            {% endif %}
+
+            {% if contacts is defined %}
+
+                <h2>Mes demandes de contact</h2>
+                {#                {{ dump(contacts) }}#}
+                <ul>
+                    {% for contact in contacts %}
+                        <li>
+                            <a href="{{ path('contactId', {id: contact.id}) }}">
+                                Demande de contact de {{ contact.name }} {{ contact.firstname }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <span>
+                <span class="title">Hello</span>
+            </span>
+
+            {% if city is defined %}
+                <p>Vous essayez de contacter {{ city }}</p>
+            {% endif %}
+
+        </div>
+
+    </div>
+{% endblock %}
