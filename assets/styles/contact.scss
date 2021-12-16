@@ -1,0 +1,8 @@
+@import 'app.scss';
+
+.contact-container {
+  > span .title {
+    background-color: $background;
+    @include getTitle;
+  }
+}

@@ -37,12 +37,12 @@ class Contact
      */
     private $age;
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -54,7 +54,7 @@ class Contact
         return $this;
     }
 
-    public function getFirstname(): ?string
+    public function getFirstname(): string
     {
         return $this->firstname;
     }
@@ -66,7 +66,7 @@ class Contact
         return $this;
     }
 
-    public function getNewsletter(): ?bool
+    public function getNewsletter(): bool
     {
         return $this->newsletter;
     }
@@ -78,7 +78,7 @@ class Contact
         return $this;
     }
 
-    public function getAge(): ?int
+    public function getAge(): int
     {
         return $this->age;
     }
